@@ -1,0 +1,76 @@
+{
+  "name": "@xinhao0426/utils",
+  "version": "0.0.1",
+  "description": "开发中常用的utils",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SuYxh/utils"
+  },
+  "bugs": "https://github.com/SuYxh/utils/issues",
+  "homepage": "https://github.com/SuYxh/utils#readme",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts ./ --fix",
+    "dev": "rollup -c --watch",
+    "build": "rollup -c",
+    "test": "vitest",
+    "doc:gen": "rimraf doc && rimraf temp && api-extractor run --local --verbose && api-documenter markdown -i temp -o doc",
+    "doc:update": "pnpm build && pnpm doc:gen && pnpm docs:dev",
+    "doc:debug": "npx api-extractor run --local --verbose --diagnostics && api-documenter markdown -i temp -o doc",
+    "trace": "tsc dist/types/index.d.ts --traceResolution > trace.log",
+    "publish": "publish --registry=https://registry.npmjs.org --access=public",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "author": "xinhao0426 <y170088888@163.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "search-insights"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@microsoft/api-documenter": "^7.22.20",
+    "@microsoft/api-extractor": "^7.35.4",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "23.0.2",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@types/node": "^18.16.18",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "eslint": "^8.43.0",
+    "fast-glob": "^3.2.12",
+    "rimraf": "^5.0.1",
+    "rollup": "^2.79.1",
+    "rollup-plugin-dts": "^4.2.3",
+    "rollup-plugin-import-export": "^0.0.1",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^4.9.5",
+    "vitepress": "1.0.0-beta.2",
+    "vitest": "^0.24.5",
+    "vue": "^3.3.4"
+  }
+}
