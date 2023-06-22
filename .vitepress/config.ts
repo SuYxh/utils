@@ -86,7 +86,7 @@ export default defineConfig({
         ],
 
         socialLinks: [
-            { icon: 'github', link: 'https://github.com/xinhao0426/utils' },
+            { icon: 'github', link: 'https://github.com/SuYxh/utils' },
         ],
 
         search: {

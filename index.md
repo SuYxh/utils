@@ -8,7 +8,7 @@ hero:
   tagline: 个人用工具函数库
   actions:
     - theme: brand
-      text: API
+      text: API -->
       link: /doc/utils
 
 features:

@@ -2,14 +2,14 @@
 
 [Home](./index.md) &gt; [@xinhao0426/utils](./utils.md) &gt; [key\_in](./utils.key_in.md)
 
-## key\_in() function
+## key\_in() 
 
 该函数检查给定对象中是否存在给定键并返回布尔值。
 
 **Signature:**
 
 ```typescript
-declare function key_in<T extends object>(key: Key, obj: T): key is keyof T;
+function key_in<T extends object>(key: Key, obj: T): key is keyof T;
 ```
 
 ## Parameters

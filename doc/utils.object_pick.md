@@ -2,14 +2,14 @@
 
 [Home](./index.md) &gt; [@xinhao0426/utils](./utils.md) &gt; [object\_pick](./utils.object_pick.md)
 
-## object\_pick() function
+## object\_pick() 
 
 函数“object\_pick”接受一个对象和一个键数组，并返回一个新对象，该对象仅包含原始对象中的指定键。
 
 **Signature:**
 
 ```typescript
-declare function object_pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K>;
+function object_pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K>;
 ```
 
 ## Parameters
