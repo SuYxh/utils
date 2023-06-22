@@ -8,6 +8,6 @@
 
 |  Function | Description |
 |  --- | --- |
-|  [key\_in(key, obj)](./utils.key_in.md) | 该函数检查给定对象中是否存在给定键并返回布尔值。 |
-|  [object\_pick(obj, keys)](./utils.object_pick.md) | 函数“object\_pick”接受一个对象和一个键数组，并返回一个新对象，该对象仅包含原始对象中的指定键。 |
+|  [keyIn(key, obj)](./utils.keyin.md) | 该函数检查给定对象中是否存在给定键并返回布尔值。 |
+|  [objectPick(obj, keys)](./utils.objectpick.md) | 函数“object\_pick”接受一个对象和一个键数组，并返回一个新对象，该对象仅包含原始对象中的指定键。 |
 

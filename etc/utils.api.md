@@ -7,10 +7,10 @@
 // Warning: (ae-forgotten-export) The symbol "Key" needs to be exported by the entry point index.d.ts
 //
 // @public
-export function key_in<T extends object>(key: Key, obj: T): key is keyof T;
+export function keyIn<T extends object>(key: Key, obj: T): key is keyof T;
 
 // @public
-export function object_pick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K>;
+export function objectPick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K>;
 
 // (No @packageDocumentation comment for this package)
 
