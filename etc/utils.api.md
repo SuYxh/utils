@@ -4,6 +4,9 @@
 
 ```ts
 
+// @public
+export function formatAmount(amount: number | string, decimalDigits?: number): string;
+
 // Warning: (ae-forgotten-export) The symbol "Key" needs to be exported by the entry point index.d.ts
 //
 // @public
@@ -11,6 +14,9 @@ export function keyIn<T extends object>(key: Key, obj: T): key is keyof T;
 
 // @public
 export function objectPick<T extends object, K extends keyof T>(obj: T, keys: K[]): Pick<T, K>;
+
+// @public
+export function phoneDesensitization(phnoeNum: string): string;
 
 // @public
 export function randomId(randomLength?: number): string;

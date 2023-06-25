@@ -82,9 +82,55 @@ function uuid(len?: number, radix?:number) {
   return uuid.join('');
 }
 
+/**
+ * 格式化金额
+ * @public
+ * @param amount - 需要格式化的金额
+ * @param decimalDigits - 金额需要保留的小数位数
+ * @returns 返回格式化后的金额
+ * @example
+ * ```ts
+ * formatAmount(1234567890) // 1,234,567,890
+ * formatAmount(1234567890, 2) // 1,234,567,890.00
+ * ```
+ */
+function formatAmount(amount: number | string, decimalDigits = 0) {
+  const amountStr = String(Number(amount).toFixed(decimalDigits))
+  const reg = /\B(?=(?:\d{3})+$)/g
+  // 是否是小数
+  const isDecimal = amountStr.indexOf('.') > -1
+  if (isDecimal) {
+    // 整数部分
+    const integerPart = amountStr.substring(0, amountStr.indexOf('.'))
+    // 小数部分
+    const decimalPart = amountStr.substring(amountStr.length, amountStr.indexOf('.'))
+    return `${integerPart.replace(reg, ',')}${decimalPart}`
+  } else {
+    return amountStr.replace(reg, ',')
+  }
+}
+
+/**
+ * 手机号脱敏处理
+ * @public
+ * @param phnoeNum - 手机号
+ * @returns 脱敏后的手机号
+ * @example
+ * ```ts
+ * phoneDesensitization('18372635819') // 183****5819
+ * ```
+ */
+function phoneDesensitization(phnoeNum: string) {
+  return phnoeNum.replace(/(\d{3})(\d{4})(\d{4})/, (str, $1, $2, $3) => {
+    return $1 + '****' + $3;
+  })
+}
+
 
 export {
   randomNumber,
   randomId,
-  uuid
+  uuid,
+  formatAmount,
+  phoneDesensitization
 };
