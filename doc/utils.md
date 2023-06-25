@@ -10,4 +10,7 @@
 |  --- | --- |
 |  [keyIn(key, obj)](./utils.keyin.md) | 该函数检查给定对象中是否存在给定键并返回布尔值。 |
 |  [objectPick(obj, keys)](./utils.objectpick.md) | 函数“object\_pick”接受一个对象和一个键数组，并返回一个新对象，该对象仅包含原始对象中的指定键。 |
+|  [randomId(randomLength)](./utils.randomid.md) | 随机生成一个自定义长度，不重复的字母加数字组合，可用来做id标识 |
+|  [randomNumber(places)](./utils.randomnumber.md) | 生成指定位数的随机数，最大为16位数，最大随机数不超过 9007199254740991 |
+|  [uuid(len, radix)](./utils.uuid.md) | 生成的UUID遵循RFC4122版本4的规定 |
 
