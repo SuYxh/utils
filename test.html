@@ -11,14 +11,35 @@
 <body>
   <!-- 此文件没什么用，仅仅测试用 -->
   <script>
-    function phoneDesensitization(phnoeNum) {
-      return phnoeNum.replace(/(\d{3})(\d{4})(\d{4})/, (str, $1, $2, $3) => {
-        return $1 + '****' + $3;
-      })
+    function hashCode(str) {
+      let hash = 0, i, chr;
+      if (str.length === 0) return hash;
+      for (i = 0; i < str.length; i++) {
+        chr = str.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+      }
+      return Math.abs(hash);
     }
 
-    const res = phoneDesensitization('18372635819')
+    function hashStr(str, places = 6) {
+      let hash = hashCode(str);
+      const alphabet = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678";
+      let result = "";
+      for (let i = 0; i < places; i++) {
+        result += alphabet.charAt(hash % alphabet.length);
+        hash = Math.floor(hash / alphabet.length);
+      }
+      return result;
+    }
+
+    const res = hashStr('1806328384@qq.com')
+    const res2 = hashStr('1806328384@qq.com')
+    const res3 = hashStr('y70088888@163.c0m')
+
     console.log(res, typeof res)
+    console.log(res2, typeof res2)
+    console.log(res3, typeof res3)
   </script>
 </body>
 

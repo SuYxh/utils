@@ -126,11 +126,107 @@ function phoneDesensitization(phnoeNum: string) {
   })
 }
 
+/**
+ * 去除字符串前面的空格
+ * @public
+ * @param str - 字符串
+ * @returns 去除空格后的字符串
+ * @example
+ * ```ts
+ * trimStart('   yxh') // yxh
+ * ```
+ */
+function trimStart(str: string) {
+  return str.replace(new RegExp('^([\\s]*)(.*)$'), '$2')
+}
+
+/**
+ * 去除字符串后面的空格
+ * @public
+ * @param str - 字符串
+ * @returns 去除空格后的字符串
+ * @example
+ * ```ts
+ * trimEnd('yxh   ') // yxh
+ * ```
+ */
+function trimEnd(str: string) {
+  return str.replace(new RegExp('^(.*?)([\\s]*)$'), '$1')
+}
+
+/**
+ * 去除字符串中的html
+ * @public
+ * @param str - 字符串
+ * @returns 去除html后的字符串
+ * @example
+ * ```ts
+ * removeHTMLInStr('<h1>哈哈哈哈<呵呵呵</h1>') // 哈哈哈哈<呵呵呵
+ * ```
+ */
+function removeHTMLInStr(str: string) {
+  /* eslint-disable */
+  return str.replace(/<[\/\!]*[^<>]*>/ig, '')
+}
+
+/**
+ * 生成hashCode， 结果为number
+ * @public
+ * @param str - 需要hash的字符串
+ * @returns 返回 hashCode
+ * @example
+ * ```ts
+ * hashCode('1806328384@qq.com')  // 288642256
+ * hashCode('1806328384@qq.com')  // 288642256
+ * hashCode('y70088888@163.c0m')  // 1923653638
+ * ```
+ */
+function hashCode(str: string) {
+  let hash = 0, i, chr;
+  if (str.length === 0) return hash;
+  for (i = 0; i < str.length; i++) {
+    chr = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + chr;
+    // 转换为 32 位有符号整数
+    hash |= 0;
+  }
+  return Math.abs(hash);
+}
+
+
+/**
+ * 生成hash字符串， 结果为 string
+ * @public
+ * @param str - 需要hash的字符串
+ * @param places - 位数，默认为6位
+ * @returns 返回hash字符串
+ * @example
+ * ```ts
+ * hashStr('1806328384@qq.com')  // Tt7WGB
+ * hashStr('1806328384@qq.com')  // Tt7WGB
+ * hashStr('y70088888@163.c0m')  // bFHXfH
+ * ```
+ */
+function hashStr(str: string, places: number = 6) {
+  let hash = hashCode(str);
+  const alphabet = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678";
+  let result = "";
+  for (let i = 0; i < places; i++) {
+    result += alphabet.charAt(hash % alphabet.length);
+    hash = Math.floor(hash / alphabet.length);
+  }
+  return result;
+}
 
 export {
   randomNumber,
   randomId,
   uuid,
   formatAmount,
-  phoneDesensitization
+  phoneDesensitization,
+  trimStart,
+  trimEnd,
+  removeHTMLInStr,
+  hashCode,
+  hashStr
 };

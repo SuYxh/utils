@@ -9,10 +9,15 @@
 |  Function | Description |
 |  --- | --- |
 |  [formatAmount(amount, decimalDigits)](./utils.formatamount.md) | 格式化金额 |
+|  [hashCode(str)](./utils.hashcode.md) | 生成hashCode， 结果为number |
+|  [hashStr(str, places)](./utils.hashstr.md) | 生成hash字符串， 结果为 string |
 |  [keyIn(key, obj)](./utils.keyin.md) | 该函数检查给定对象中是否存在给定键并返回布尔值。 |
 |  [objectPick(obj, keys)](./utils.objectpick.md) | 函数“object\_pick”接受一个对象和一个键数组，并返回一个新对象，该对象仅包含原始对象中的指定键。 |
 |  [phoneDesensitization(phnoeNum)](./utils.phonedesensitization.md) | 手机号脱敏处理 |
 |  [randomId(randomLength)](./utils.randomid.md) | 随机生成一个自定义长度，不重复的字母加数字组合，可用来做id标识 |
 |  [randomNumber(places)](./utils.randomnumber.md) | 生成指定位数的随机数，最大为16位数，最大随机数不超过 9007199254740991 |
+|  [removeHTMLInStr(str)](./utils.removehtmlinstr.md) | 去除字符串中的html |
+|  [trimEnd(str)](./utils.trimend.md) | 去除字符串后面的空格 |
+|  [trimStart(str)](./utils.trimstart.md) | 去除字符串前面的空格 |
 |  [uuid(len, radix)](./utils.uuid.md) | 生成的UUID遵循RFC4122版本4的规定 |
 

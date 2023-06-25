@@ -7,6 +7,12 @@
 // @public
 export function formatAmount(amount: number | string, decimalDigits?: number): string;
 
+// @public
+export function hashCode(str: string): number;
+
+// @public
+export function hashStr(str: string, places?: number): string;
+
 // Warning: (ae-forgotten-export) The symbol "Key" needs to be exported by the entry point index.d.ts
 //
 // @public
@@ -23,6 +29,15 @@ export function randomId(randomLength?: number): string;
 
 // @public
 export function randomNumber(places: number): number;
+
+// @public
+export function removeHTMLInStr(str: string): string;
+
+// @public
+export function trimEnd(str: string): string;
+
+// @public
+export function trimStart(str: string): string;
 
 // @public
 export function uuid(len?: number, radix?: number): string;
