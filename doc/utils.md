@@ -9,8 +9,12 @@
 |  Function | Description |
 |  --- | --- |
 |  [formatAmount(amount, decimalDigits)](./utils.formatamount.md) | 格式化金额 |
+|  [getDeviceInfo()](./utils.getdeviceinfo.md) | 获取设备信息 |
 |  [hashCode(str)](./utils.hashcode.md) | 生成hashCode， 结果为number |
 |  [hashStr(str, places)](./utils.hashstr.md) | 生成hash字符串， 结果为 string |
+|  [isiPhoneX()](./utils.isiphonex.md) | 是否iPhone x 系列 |
+|  [isMobile()](./utils.ismobile.md) | 是否是移动端 |
+|  [isWeixin()](./utils.isweixin.md) | 判断是否为微信浏览器环境 |
 |  [keyIn(key, obj)](./utils.keyin.md) | 该函数检查给定对象中是否存在给定键并返回布尔值。 |
 |  [objectPick(obj, keys)](./utils.objectpick.md) | 函数“object\_pick”接受一个对象和一个键数组，并返回一个新对象，该对象仅包含原始对象中的指定键。 |
 |  [phoneDesensitization(phnoeNum)](./utils.phonedesensitization.md) | 手机号脱敏处理 |

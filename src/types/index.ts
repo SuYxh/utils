@@ -51,3 +51,31 @@ export type KeyboardEventKeys<T> = T extends Fn ? keyof ReturnType<T> : keyof T
 export type Concat<T, S> = {
     [k in (keyof T | keyof S)]: k extends keyof S ? S[k] : k extends keyof T ? T[k] : never
 }
+
+
+export interface DeviceInfoType {
+    /**
+     * 版本
+     */
+    version: string
+    /**
+     * 系统
+     */
+    plat: string
+    /**
+     * 浏览器
+     */
+    type: string
+    /**
+     * 是 PC 还是 mobile
+     */
+    pc: string
+    /**
+     * 前缀
+     */
+    prefix: string
+    /**
+     * 是否是移动端
+     */
+    isMobile: boolean
+}

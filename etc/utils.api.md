@@ -7,11 +7,25 @@
 // @public
 export function formatAmount(amount: number | string, decimalDigits?: number): string;
 
+// Warning: (ae-forgotten-export) The symbol "DeviceInfoType" needs to be exported by the entry point index.d.ts
+//
+// @public
+export function getDeviceInfo(): DeviceInfoType;
+
 // @public
 export function hashCode(str: string): number;
 
 // @public
 export function hashStr(str: string, places?: number): string;
+
+// @public
+export function isiPhoneX(): boolean;
+
+// @public
+export function isMobile(): boolean;
+
+// @public
+export function isWeixin(): boolean;
 
 // Warning: (ae-forgotten-export) The symbol "Key" needs to be exported by the entry point index.d.ts
 //

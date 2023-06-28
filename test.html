@@ -11,35 +11,48 @@
 <body>
   <!-- 此文件没什么用，仅仅测试用 -->
   <script>
-    function hashCode(str) {
-      let hash = 0, i, chr;
-      if (str.length === 0) return hash;
-      for (i = 0; i < str.length; i++) {
-        chr = str.charCodeAt(i);
-        hash = ((hash << 5) - hash) + chr;
-        hash |= 0; // Convert to 32bit integer
-      }
-      return Math.abs(hash);
+    function isWeixin() {
+      const ua = navigator.userAgent.toLowerCase();
+      return ua.match(/MicroMessenger/i) === "micromessenger"
     }
 
-    function hashStr(str, places = 6) {
-      let hash = hashCode(str);
-      const alphabet = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678";
-      let result = "";
-      for (let i = 0; i < places; i++) {
-        result += alphabet.charAt(hash % alphabet.length);
-        hash = Math.floor(hash / alphabet.length);
-      }
-      return result;
+
+    function isiPhoneX() {
+      const { width, height } = window.screen
+      const isiPhoneXs =
+        window.devicePixelRatio === 3 && width === 375 && height === 812
+      const isiPhoneXsMax =
+        window.devicePixelRatio === 3 && width === 414 && height === 896
+      const isiPhoneXr =
+        window.devicePixelRatio === 2 && width === 414 && height === 896
+
+      return isiPhoneXs || isiPhoneXsMax || isiPhoneXr
     }
 
-    const res = hashStr('1806328384@qq.com')
-    const res2 = hashStr('1806328384@qq.com')
-    const res3 = hashStr('y70088888@163.c0m')
+    function isiPhoneX2() {
+      const { width, height } = window.screen;
+      const devicePixelRatio = window.devicePixelRatio;
 
-    console.log(res, typeof res)
-    console.log(res2, typeof res2)
-    console.log(res3, typeof res3)
+      // Define the supported iPhone X series screen sizes
+      const screenSizeConfig = [
+        { width: 375, height: 812 },
+        { width: 414, height: 896 }
+        // Add more screen sizes for future iPhone X series devices if needed
+      ];
+
+      // Check if the current screen size matches any of the defined configurations
+      return screenSizeConfig.some(({ width: configWidth, height: configHeight }) => {
+        return (
+          [2, 3].includes(devicePixelRatio) &&
+          (width === configWidth && height === configHeight)
+        );
+      });
+    }
+
+
+    console.log('isWeixin', isWeixin())
+    console.log('getiOSDeviceType', isiPhoneX())
+
   </script>
 </body>
 

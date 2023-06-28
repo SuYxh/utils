@@ -19,13 +19,14 @@ module.exports = {
     'no-throw-literal': 'error',
     'no-return-await': 'error',
     'prefer-const': 'error',
-    'eqeqeq': ['error', 'always'],
     'block-spacing': ['error', 'always'],
     'comma-dangle': ['error', 'never'],
     'comma-spacing': ['error', { 'before': false, 'after': true }],
     'indent': ['error', 2, { 'SwitchCase': 1 }],
     'linebreak-style': ['error', 'unix'],
     'quotes': ['error', 'single', { 'avoidEscape': true }],
-    'semi': 'off'
+    'semi': 'off',
+    'eqeqeq': 'off',
+    'no-useless-escape': 'off'
   }
 };
