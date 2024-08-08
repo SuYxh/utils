@@ -1,4 +1,3 @@
 [build]
     publish = ".vitepress/dist"
-    command = "pnpm install --no-frozen-lockfile && pnpm run docs:build"
-    
+    command = "npm i && npm run docs:build"
