@@ -17,12 +17,14 @@ function copyright() {
     return `Copyright © ${year} xinhao0426`
 }
 
+// 目录标题去除utils.前缀
 function resolveTitle(title: string) {
     title = title === 'utils' ? title : title.replace('utils.', '')
     title = title.split('.').join(' ')
     return title
 }
 
+// 将md文档列表转为树结构
 function getTree(file: string, prefix: string, tree = {}) {
     const [cur, ...rest] = file.replace('.md', '').split('.')
     const curPath = prefix + cur
@@ -39,6 +41,7 @@ function getTree(file: string, prefix: string, tree = {}) {
     }
 }
 
+// 将树结构转为目录数组
 function treeToItems(tree: IndexTree) {
     const items: DefaultTheme.SidebarItem[] = []
     Object.keys(tree).forEach((key) => {
